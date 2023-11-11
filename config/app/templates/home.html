@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+{% block content %}
+
+<body>
+
+    <div class="p-10"><!-- Welcome introduction -->
+        <h2 class="text-3xl  text-red-600 font-bold">Welcome to My Django-Htmx-AlpineJS-TailwindCSS Boilerplate</h2>
+        <p class="mb-4 mt-4">This is the home page content. You can customize it as you like.</p>
+
+        <!-- htmx -->
+        <h1 class="text-3xl text-red-600 font-bold mb-4 ">Hello,Test HTMX!</h1>
+        <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
+            hx-get="{% url 'update_content' %}" hx-target="#content">
+            Update Content
+        </button>
+        <div id="content" class="mt-4 p-4 border">
+            Initial Content
+        </div>
+
+        <!-- Alpine JS -->
+
+        <h1 class="text-3xl text-red-600 font-bold mb-4 ">Hello,Test Alpine JS!</h1>
+
+        <div x-data="{ count: 0 }" class="text-left">
+            <button x-on:click="count++" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Increment
+            </button>
+            <span x-text="count" class="ml-4 text-2xl font-bold"></span>
+        </div>
+
+
+        <!-- Image -->
+        <h1 class="text-3xl text-red-600 font-bold mb-4 mt-4 ">Image Test!</h1>
+        <img src="{% static 'images/Nahian.jpg' %}" alt="Nahian's image" class="rounded-full h-48 w-48 md:h-20 md:w-20">
+    </div>
+</body>
+{% endblock %}
+
+</html>
