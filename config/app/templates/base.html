@@ -1,5 +1,7 @@
 {% load static tailwind_tags %}
 {% load django_htmx %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,18 +10,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  {% tailwind_css %}
-  {% load static %}
+  {% tailwind_css %} {% load static %}
   <script src="{% static 'js/htmx.min.js' %}" defer></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.2/dist/cdn.min.js"></script>
-
-
-
-
 </head>
 
 <body>
-
   <!-- NavBar -->
   <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -54,7 +50,7 @@
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex flex-shrink-0 items-center">
             <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Your Company">
+              alt="Your Company" />
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
@@ -90,7 +86,7 @@
                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                 <span class="absolute -inset-1.5"></span>
                 <span class="sr-only">Open user menu</span>
-                <img class="h-8 w-8 rounded-full" src="{% static 'images/Nahian.jpg' %}" alt="Nahian's image">
+                <img class="h-8 w-8 rounded-full" src="{% static 'images/Nahian.jpg' %}" alt="Nahian's image" />
               </button>
             </div>
 
@@ -106,7 +102,6 @@
                 id="user-menu-item-2">Sign out</a>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -127,9 +122,7 @@
     </div>
   </nav>
 
-
   {% block content %} {% endblock %}
-
 </body>
 
 </html>

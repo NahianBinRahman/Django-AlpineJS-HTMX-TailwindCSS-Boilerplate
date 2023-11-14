@@ -40,6 +40,7 @@ STATICFILES_DIRS = [
 
 
 TAILWIND_CSS_PATH = 'css/dist/styles.css'
+STATIC_ROOT = BASE_DIR / 'static'
 
 
 # Application definition

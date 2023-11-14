@@ -1,7 +1,4 @@
 {% extends "base.html" %}
-{% load static %}
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
-
 
 {% block content %}
 
@@ -43,9 +38,10 @@
         </div>
 
 
-        <!-- Image -->
+        <!-- Static file- Image -->
         <h1 class="text-3xl text-red-600 font-bold mb-4 mt-4 ">Image Test!</h1>
-        <img src="{% static 'images/Nahian.jpg' %}" alt="Nahian's image" class="rounded-full h-48 w-48 md:h-20 md:w-20">
+        <img src="/static/images/Nahian.jpg" alt="Nahian's image" class="rounded-full h-48 w-48 md:h-20 md:w-20">
+
     </div>
 </body>
 {% endblock %}
